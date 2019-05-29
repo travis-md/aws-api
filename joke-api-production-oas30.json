@@ -1,0 +1,99 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "joke-api",
+    "version": "2019-05-29T21:43:18Z"
+  },
+  "servers": [
+    {
+      "url": "https://dp3dlfrtvh.execute-api.us-east-1.amazonaws.com/{basePath}",
+      "variables": {
+        "basePath": {
+          "default": "/production"
+        }
+      }
+    }
+  ],
+  "paths": {
+    "/jokes": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Empty"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Empty"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/jokes/{joke-id}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "joke-id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Empty"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Empty"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Empty": {
+        "title": "Empty Schema",
+        "type": "object"
+      }
+    }
+  }
+}
